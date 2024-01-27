@@ -30,17 +30,14 @@ vec4 realisticFire(vec2 texCoords, float xSize, float ySize, float overallnoiseM
     float circleG = length((fireTexCoords - vec2(0.5, 0.0)) * vec2(xSize / 0.6, ySize / 0.6));
     circleG = smoothstep(0.5, 1.0, circleG);
     circleG = 1.0 - circleG;
-    // circleG = step(0.5, circleG);
 
     float circleR = length((fireTexCoords - vec2(0.5, 0.0)) * vec2(xSize/ 0.7, ySize/ 0.9));
     circleR = smoothstep(0.5, 1.0, circleR);
     circleR = 1.0 - circleR;
-    // circleR = step(0.5, circleR);
 
     float circleB = length((fireTexCoords - vec2(0.5, 0.0)) * vec2(xSize/ 0.8, ySize/ 1.5));
     circleB = smoothstep(0.5, 1.0, circleB);
     circleB = 1.0 - circleB;
-    // circleB = step(0.5, circleB);
 
     float circleA = max(circleR, circleG);
     circleA = max(circleA, circleB);
@@ -95,7 +92,7 @@ void main()
     vec4 fireColor3 = vec4(1.0, 0.4824, 0.0, 1.0);
 
     float fireSizeX = ((sin(u_time * 0.2) / 2.0) + 0.5) * 4.0;
-    vec4 fireTexture = realisticFire(texCoords, 0.0, 1.0, 0.5);
+    vec4 fireTexture = realisticFire(texCoords, fireSizeX, 1.0, 0.5);
     // vec4 fireTexture = stylizedFire(texCoords, fireSizeX, 1.0, 0.2);
 
     //Final Color Calculations
