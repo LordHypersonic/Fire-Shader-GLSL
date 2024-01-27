@@ -1,0 +1,8 @@
+{
+    "glsl-canvas.uniforms": {
+        
+    },
+    "glsl-canvas.textures": {
+        "0": "Images/noise_tex_512.png",
+    }
+}
